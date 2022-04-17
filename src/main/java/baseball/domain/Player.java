@@ -1,5 +1,7 @@
 package baseball.domain;
 
+import baseball.status.GameStatus;
+
 import java.util.HashMap;
 import java.util.Map;
 
