@@ -20,9 +20,17 @@ public class Computer {
     private void generator() {
         baseballNum = new HashMap<>();
         for (int seq = 0; seq<BASEBALL_NUM; seq++) {
-            int randomNumber = Randoms.pickNumberInRange(START_INCLUSIVE, END_INCLUSIVE);
+            int randomNumber = getRandomNumber();
             baseballNum.put(randomNumber, seq);
         }
+    }
+
+    private int getRandomNumber() {
+        int randomNumber = Randoms.pickNumberInRange(START_INCLUSIVE, END_INCLUSIVE);
+        while (baseballNum.containsKey(randomNumber)) {
+            randomNumber = Randoms.pickNumberInRange(START_INCLUSIVE, END_INCLUSIVE);
+        }
+        return randomNumber;
     }
 
     boolean compare(Map<Integer, Integer> userBaseballInput) {

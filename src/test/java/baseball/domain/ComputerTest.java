@@ -82,6 +82,24 @@ public class ComputerTest {
         );
     }
 
+    @Test
+    @DisplayName("중복된 수가 랜덤 함수에서 제공될 경우 중복을 제거하여 상대방 수로 지닌다.")
+    void duplicate_random_number() {
+        String givenInput = "123";
+        Map<Integer, Integer> givenUserBaseballNum = stringToMap(givenInput);
+        assertRandomNumberInRangeTest(
+                () -> {
+                    computer = new Computer();
+                    boolean answerFlag = computer.compare(givenUserBaseballNum);
+                    assertAll(
+                            () -> assertThat(answerFlag).isTrue(),
+                            () -> assertThat(output()).contains("3스트라이크")
+                    );
+                },
+                1,1,1,2,2,2,3
+        );
+    }
+
     private Map<Integer, Integer> stringToMap(String numberAsText) {
         Map<Integer, Integer> baseballNum = new HashMap<>();
         for (int i=0; i<3; i++) {
