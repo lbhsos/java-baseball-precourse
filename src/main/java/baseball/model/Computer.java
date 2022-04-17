@@ -21,15 +21,15 @@ public class Computer {
 
     public boolean compare(Map<Integer, Integer> userBaseballInput) {
         int strikeCount = 0;
-        int bollCount = 0;
+        int ballCount = 0;
 
         for (Integer userNumber : userBaseballInput.keySet()) {
             Integer userPosition = userBaseballInput.get(userNumber);
             ResultStatus result = match(userNumber, userPosition);
             strikeCount += strike(result);
-            bollCount += boll(result);
+            ballCount += boll(result);
         }
-        BaseballResult baseballResult = new BaseballResult(strikeCount, bollCount);
+        BaseballResult baseballResult = new BaseballResult(strikeCount, ballCount);
         Message.print(baseballResult);
         return baseballResult.isAnswer();
     }
@@ -58,7 +58,7 @@ public class Computer {
         if (answerPosition == userPosition) {
             return ResultStatus.STRIKE;
         }
-        return ResultStatus.BOLL;
+        return ResultStatus.BALL;
     }
 
     private boolean checkContains(int userNumber) {
@@ -76,7 +76,7 @@ public class Computer {
     }
 
     private int boll(ResultStatus result) {
-        if (result == ResultStatus.BOLL) {
+        if (result == ResultStatus.BALL) {
             return 1;
         }
         return 0;

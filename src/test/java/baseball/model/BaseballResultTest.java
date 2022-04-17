@@ -16,8 +16,8 @@ public class BaseballResultTest {
     void answer() {
         // given
         int givenStrikeCount = 3;
-        int givenBollCount = 0;
-        givenBaseballResult = new BaseballResult(givenStrikeCount, givenBollCount);
+        int givenBallCount = 0;
+        givenBaseballResult = new BaseballResult(givenStrikeCount, givenBallCount);
         // when
         boolean resultAnswer = givenBaseballResult.isAnswer();
         // then
@@ -30,8 +30,8 @@ public class BaseballResultTest {
     void not_answer(int givenStrikeCount) {
         // given
         int baseBallCount = 3;
-        int givenBollCount = baseBallCount - givenStrikeCount;
-        givenBaseballResult = new BaseballResult(givenStrikeCount, givenBollCount);
+        int givenBallCount = baseBallCount - givenStrikeCount;
+        givenBaseballResult = new BaseballResult(givenStrikeCount, givenBallCount);
         // when
         boolean resultAnswer = givenBaseballResult.isAnswer();
         // then
@@ -43,8 +43,8 @@ public class BaseballResultTest {
     void get_result_when_nothing() {
         // given
         int givenStrikeCount = 0;
-        int givenBollCount = 0;
-        givenBaseballResult = new BaseballResult(givenStrikeCount, givenBollCount);
+        int givenBallCount = 0;
+        givenBaseballResult = new BaseballResult(givenStrikeCount, givenBallCount);
         // when
         String resultText = givenBaseballResult.getResultText();
         // then
@@ -56,8 +56,8 @@ public class BaseballResultTest {
     void get_result_when_answer() {
         // given
         int givenStrikeCount = 3;
-        int givenBollCount = 0;
-        givenBaseballResult = new BaseballResult(givenStrikeCount, givenBollCount);
+        int givenBallCount = 0;
+        givenBaseballResult = new BaseballResult(givenStrikeCount, givenBallCount);
         // when
         String resultText = givenBaseballResult.getResultText();
         // then
@@ -69,8 +69,8 @@ public class BaseballResultTest {
     void get_result_when_all_boll() {
         // given
         int givenStrikeCount = 0;
-        int givenBollCount = 3;
-        givenBaseballResult = new BaseballResult(givenStrikeCount, givenBollCount);
+        int givenBallCount = 3;
+        givenBaseballResult = new BaseballResult(givenStrikeCount, givenBallCount);
         // when
         String resultText = givenBaseballResult.getResultText();
         // then
@@ -83,12 +83,12 @@ public class BaseballResultTest {
     void get_result(int givenStrikeCount) {
         // given
         int baseBallCount = 3;
-        int givenBollCount = baseBallCount - givenStrikeCount;
-        givenBaseballResult = new BaseballResult(givenStrikeCount, givenBollCount);
+        int givenBallCount = baseBallCount - givenStrikeCount;
+        givenBaseballResult = new BaseballResult(givenStrikeCount, givenBallCount);
         // when
         String resultText = givenBaseballResult.getResultText();
         // then
-        assertThat(resultText).isEqualTo(givenBollCount+"볼 "+givenStrikeCount+"스트라이크");
+        assertThat(resultText).isEqualTo(givenBallCount+"볼 "+givenStrikeCount+"스트라이크");
     }
 
 }

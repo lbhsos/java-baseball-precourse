@@ -5,13 +5,13 @@ import baseball.status.ResultStatus;
 public class BaseballResult {
 
     private int strikeCount;
-    private int bollCount;
+    private int ballCount;
 
     private static final int BASEBALL_NUM = 3;
 
-    public BaseballResult(int strikeCount, int bollCount) {
+    public BaseballResult(int strikeCount, int ballCount) {
         this.strikeCount = strikeCount;
-        this.bollCount = bollCount;
+        this.ballCount = ballCount;
     }
 
     public boolean isAnswer() {
@@ -23,7 +23,7 @@ public class BaseballResult {
 
     public String getResultText() {
         StringBuilder sb = new StringBuilder();
-        if (strikeCount == 0 && bollCount == 0) {
+        if (strikeCount == 0 && ballCount == 0) {
             ResultStatus nothing = ResultStatus.NOTHING;
             sb.append(nothing.getText());
             return sb.toString();
@@ -37,13 +37,13 @@ public class BaseballResult {
         if (strikeCount == 3) {
             return;
         }
-        ResultStatus boll = ResultStatus.BOLL;
-        sb.append(bollCount + boll.getText());
+        ResultStatus ball = ResultStatus.BALL;
+        sb.append(ballCount + ball.getText());
         sb.append(" ");
     }
 
     private void appendStrikeResult(StringBuilder sb) {
-        if (bollCount == 3) {
+        if (ballCount == 3) {
             return;
         }
         ResultStatus strike = ResultStatus.STRIKE;
