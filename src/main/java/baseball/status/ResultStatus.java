@@ -1,4 +1,4 @@
-package baseball.domain;
+package baseball.status;
 
 public enum ResultStatus {
     NOTHING("낫싱"),
