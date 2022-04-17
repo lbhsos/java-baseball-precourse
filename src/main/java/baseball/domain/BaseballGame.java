@@ -49,6 +49,5 @@ public class BaseballGame {
 
     public void quit() {
         System.out.println(END_MESSAGE);
-//        System.exit(0);
     }
 }
