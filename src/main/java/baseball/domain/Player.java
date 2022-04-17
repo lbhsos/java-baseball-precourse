@@ -5,6 +5,7 @@ import baseball.status.GameStatus;
 import java.util.HashMap;
 import java.util.Map;
 
+import static baseball.view.Message.*;
 import static camp.nextstep.edu.missionutils.Console.readLine;
 
 public class Player {
@@ -12,11 +13,6 @@ public class Player {
     private static final int READ_ONLY_ONE = 0;
     private static final int GAME_INPUT_LENGTH = 1;
     private static final int BASEBALL_INPUT_LENGTH = 3;
-    public static final String INVALID_LENGTH_INPUT_MESSAGE = "1-9 사이의 서로 다른 임의의 수 '3개'를 입력하여주세요.";
-    public static final String INVALID_VALUE_INPUT_MESSAGE = "숫자만 입력 가능합니다.";
-    public static final String INVALID_VALUE_GAME_CONTINUE_INPUT_MESSAGE = "1 또는 2만 입력 가능합니다.";
-    public static final String DIFFERENT_VALUE_REQUIRED_MESSAGE = "1-9 사이의 서로 '다른' 임의의 수 3개를 입력하여주세요.";
-    public static final String INVALID_RANGE_INPUT_MESSAGE = "'1-9 사이'의 서로 다른 임의의 수 3개를 입력하여주세요.";
 
     public Map<Integer, Integer> getBaseballInput() {
         String input = readLine();

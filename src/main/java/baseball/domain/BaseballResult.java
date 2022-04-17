@@ -21,7 +21,7 @@ public class BaseballResult {
         return false;
     }
 
-    String getResultText() {
+    public String getResultText() {
         StringBuilder sb = new StringBuilder();
         if (strikeCount == 0 && bollCount == 0) {
             ResultStatus nothing = ResultStatus.NOTHING;

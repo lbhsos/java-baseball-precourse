@@ -6,7 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import java.io.ByteArrayInputStream;
 
-import static baseball.domain.Player.*;
+import static baseball.view.Message.*;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class PlayerTest {
