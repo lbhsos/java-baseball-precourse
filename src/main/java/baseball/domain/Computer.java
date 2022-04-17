@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Computer {
-
+    // Map<number, position>
     private Map<Integer, Integer> baseballNum;
 
     private static final int START_INCLUSIVE = 1;
@@ -23,7 +23,7 @@ public class Computer {
 
         for (int seq = 0; seq<BASEBALL_NUM; seq++) {
             int randomNumber = Randoms.pickNumberInRange(START_INCLUSIVE, END_INCLUSIVE);
-            baseballNum.put(seq, randomNumber);
+            baseballNum.put(randomNumber, seq);
         }
     }
 
