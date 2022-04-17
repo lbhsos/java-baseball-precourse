@@ -30,7 +30,7 @@ public class ComputerTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"123, 325"})
-    @DisplayName("1볼 1스트라이크를 정상적으로 비교하는지 확인한다")
+    @DisplayName("1볼 1스트라이크의 경우를 정상적으로 비교하는지 확인한다")
     void one_boll_one_strike(String givenInput) {
         Map<Integer, Integer> givenUserBaseballNum = stringToMap(givenInput);
         assertRandomNumberInRangeTest(
@@ -47,7 +47,7 @@ public class ComputerTest {
     }
 
     @Test
-    @DisplayName("3스트라이크를 정상적으로 비교하는지 확인한다")
+    @DisplayName("사용자의 입력이 상대방 수와 모두 일치할 경우 3스트라이크를 정상적으로 비교하는지 확인한다")
     void all_strike() {
         String givenInput = "135";
         Map<Integer, Integer> givenUserBaseballNum = stringToMap(givenInput);
@@ -65,7 +65,7 @@ public class ComputerTest {
     }
 
     @Test
-    @DisplayName("낫싱의 경우 정상적으로 비교하는지 확인한다")
+    @DisplayName("사용자의 입력이 상대방 수와 아무것도 일치하지 않을 경우 낫싱을 리턴하는지 확인한다")
     void nothing() {
         String givenInput = "123";
         Map<Integer, Integer> givenUserBaseballNum = stringToMap(givenInput);
