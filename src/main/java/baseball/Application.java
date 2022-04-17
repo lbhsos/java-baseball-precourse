@@ -9,5 +9,6 @@ public class Application {
         while (onGame) {
             onGame = baseballGame.start();
         }
+        baseballGame.quit();
     }
 }

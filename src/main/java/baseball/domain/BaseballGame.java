@@ -13,6 +13,7 @@ public class BaseballGame {
     public static final String BASEBALL_INPUT_REQUIRED_MESSAGE = "숫자를 입력해주세요: ";
     public static final String GAME_CONTINUE_INPUT_REQUIRED_MESSAGE = "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
     public static final String GAME_END_MESSAGE = "3개의 숫자를 모두 맞히셨습니다! 게임 종료";
+    public static final String END_MESSAGE = "게임 종료";
 
     public boolean start() {
         this.computer = new Computer();
@@ -44,5 +45,10 @@ public class BaseballGame {
             System.out.println(GAME_END_MESSAGE);
         }
         return this.correctAnswer = result;
+    }
+
+    public void quit() {
+        System.out.println(END_MESSAGE);
+//        System.exit(0);
     }
 }
