@@ -32,7 +32,7 @@ public class Player {
         char userInput = input.charAt(READ_ONLY_ONE);
         isNumeric(input.charAt(READ_ONLY_ONE));
         int numericValue = Character.getNumericValue(userInput);
-        if (numericValue != GameStatus.EXIT.getValue() || numericValue != GameStatus.CONTINUE.getValue()) {
+        if (numericValue != GameStatus.EXIT.getValue() && numericValue != GameStatus.CONTINUE.getValue()) {
             throw new IllegalArgumentException(INVALID_VALUE_GAME_CONTINUE_INPUT_MESSAGE);
         }
         return numericValue;
