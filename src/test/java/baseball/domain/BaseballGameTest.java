@@ -16,12 +16,12 @@ public class BaseballGameTest {
     }
 
     @Test
-    @DisplayName("게임이 시작되면 Computer 객체를 리턴한다")
-    void start() {
+    @DisplayName("게임 정답을 맞춘 후 사용자가 1을 입력을 하면 true를 반환한다.")
+    void continue_game() {
         // given
         // when
-        Computer computer = baseballGame.start();
+        boolean continueGame = baseballGame.continueGame(1);
         // then
-        assertThat(computer).isNotNull();
+        assertThat(continueGame).isTrue();
     }
 }
