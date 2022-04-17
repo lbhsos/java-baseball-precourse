@@ -31,6 +31,10 @@ public class BaseballGame {
         return continueFlag;
     }
 
+    public void quit() {
+        System.out.println(END_MESSAGE);
+    }
+
     private boolean checkContinue(int userInput) {
         if (userInput == CONTINUE) {
             this.correctAnswer = false;
@@ -45,9 +49,5 @@ public class BaseballGame {
             System.out.println(GAME_END_MESSAGE);
         }
         return this.correctAnswer = result;
-    }
-
-    public void quit() {
-        System.out.println(END_MESSAGE);
     }
 }
