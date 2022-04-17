@@ -18,12 +18,12 @@
 - [x] 사용자의 입력이 상대방 수와 아무것도 일치하지 않을 경우 낫싱을 리턴하는지 확인한다.
 
 ### Player
-- [ ] 사용자의 입력이 숫자가 아닌 경우 IllegalArgumentException을 발생시킨다.
-- [ ] 사용자의 입력 문자 길이가 세 글자가 아닌 경우 IllegalArgumentException을 발생시킨다.
-- [ ] 사용자의 입력 중 숫자 겹칠 경우 IllegalArgumentException을 발생시킨다.
-- [ ] 게임 종료 후 사용자 입력이 1 또는 2가 아닌 경우 IllegalArgumentException을 발생시킨다.
-- [ ] 게임 종료 후 사용자 입력이 숫자가 아닌 경우 IllegalArgumentException을 발생시킨다.
-- [ ] 게임 종료 후 사용자의 입력 문자 길이가 한 글자가 아닌 경우 IllegalArgumentException을 발생시킨다.
+- [x] 사용자의 입력이 숫자가 아닌 경우 IllegalArgumentException을 발생시킨다.
+- [x] 사용자의 입력 문자 길이가 세 글자가 아닌 경우 IllegalArgumentException을 발생시킨다.
+- [x] 사용자의 입력 중 숫자 겹칠 경우 IllegalArgumentException을 발생시킨다.
+- [x] 게임 종료 후 사용자 입력이 1 또는 2가 아닌 경우 IllegalArgumentException을 발생시킨다.
+- [x] 게임 종료 후 사용자 입력이 숫자가 아닌 경우 IllegalArgumentException을 발생시킨다.
+- [x] 게임 종료 후 사용자의 입력 문자 길이가 한 글자가 아닌 경우 IllegalArgumentException을 발생시킨다.
 
 ### Result
 - [ ] Result 객체가 생성되면, 현재 볼, 스트라이크 현황을 프린트해준다. 단, 볼과 스트라이크 갯수가 0이면 낫싱을 프린트해준다.
