@@ -1,6 +1,6 @@
 package baseball.view;
 
-import baseball.domain.BaseballResult;
+import baseball.model.BaseballResult;
 
 public class Message {
     public static final String BASEBALL_INPUT_REQUIRED_MESSAGE = "숫자를 입력해주세요: ";

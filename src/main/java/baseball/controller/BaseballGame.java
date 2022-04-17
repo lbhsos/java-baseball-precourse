@@ -1,4 +1,7 @@
-package baseball.domain;
+package baseball.controller;
+
+import baseball.model.Computer;
+import baseball.model.Player;
 
 import java.util.Map;
 
@@ -42,10 +45,10 @@ public class BaseballGame {
     }
 
     private boolean isCorrectAnswer(Map<Integer, Integer> userBaseballInput) {
-        boolean result = computer.compare(userBaseballInput);
-        if (result) {
+        boolean answer = computer.compare(userBaseballInput);
+        if (answer) {
             printAppEnd();
         }
-        return this.correctAnswer = result;
+        return this.correctAnswer = answer;
     }
 }

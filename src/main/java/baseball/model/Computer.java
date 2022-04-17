@@ -1,4 +1,4 @@
-package baseball.domain;
+package baseball.model;
 
 import baseball.status.ResultStatus;
 import baseball.view.Message;
@@ -19,6 +19,21 @@ public class Computer {
         this.generator();
     }
 
+    public boolean compare(Map<Integer, Integer> userBaseballInput) {
+        int strikeCount = 0;
+        int bollCount = 0;
+
+        for (Integer userNumber : userBaseballInput.keySet()) {
+            Integer userPosition = userBaseballInput.get(userNumber);
+            ResultStatus result = match(userNumber, userPosition);
+            strikeCount += strike(result);
+            bollCount += boll(result);
+        }
+        BaseballResult baseballResult = new BaseballResult(strikeCount, bollCount);
+        Message.print(baseballResult);
+        return baseballResult.isAnswer();
+    }
+
     private void generator() {
         baseballNum = new HashMap<>();
         for (int seq = 0; seq<BASEBALL_NUM; seq++) {
@@ -33,21 +48,6 @@ public class Computer {
             randomNumber = Randoms.pickNumberInRange(START_INCLUSIVE, END_INCLUSIVE);
         }
         return randomNumber;
-    }
-
-    boolean compare(Map<Integer, Integer> userBaseballInput) {
-        int strikeCount = 0;
-        int bollCount = 0;
-
-        for (Integer userNumber : userBaseballInput.keySet()) {
-            Integer userPosition = userBaseballInput.get(userNumber);
-            ResultStatus result = match(userNumber, userPosition);
-            strikeCount += strike(result);
-            bollCount += boll(result);
-        }
-        BaseballResult baseballResult = new BaseballResult(strikeCount, bollCount);
-        Message.print(baseballResult);
-        return baseballResult.isAnswer();
     }
 
     private ResultStatus match(int userNumber, int userPosition) {

@@ -1,4 +1,4 @@
-package baseball.domain;
+package baseball.model;
 
 import baseball.status.ResultStatus;
 
@@ -14,7 +14,7 @@ public class BaseballResult {
         this.bollCount = bollCount;
     }
 
-    boolean isAnswer() {
+    public boolean isAnswer() {
         if (this.strikeCount == BASEBALL_NUM) {
             return true;
         }
