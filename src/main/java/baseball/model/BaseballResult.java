@@ -43,6 +43,9 @@ public class BaseballResult {
     }
 
     private void appendStrikeResult(StringBuilder sb) {
+        if (bollCount == 3) {
+            return;
+        }
         ResultStatus strike = ResultStatus.STRIKE;
         sb.append(strikeCount + strike.getText());
     }
