@@ -1,5 +1,7 @@
 package baseball.domain;
 
+import baseball.status.ResultStatus;
+
 public class BaseballResult {
 
     private int strikeCount;
@@ -19,18 +21,29 @@ public class BaseballResult {
         return false;
     }
 
-    String printResult() {
+    String getResultText() {
         StringBuilder sb = new StringBuilder();
         if (strikeCount == 0 && bollCount == 0) {
             ResultStatus nothing = ResultStatus.NOTHING;
             sb.append(nothing.getText());
             return sb.toString();
         }
+        appendBollResult(sb);
+        appendStrikeResult(sb);
+        return sb.toString();
+    }
+
+    private void appendBollResult(StringBuilder sb) {
+        if (strikeCount == 3) {
+            return;
+        }
         ResultStatus boll = ResultStatus.BOLL;
         sb.append(bollCount + boll.getText());
         sb.append(" ");
+    }
+
+    private void appendStrikeResult(StringBuilder sb) {
         ResultStatus strike = ResultStatus.STRIKE;
         sb.append(strikeCount + strike.getText());
-        return sb.toString();
     }
 }

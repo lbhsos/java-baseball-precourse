@@ -57,7 +57,7 @@ public class ComputerTest {
                     boolean answerFlag = computer.compare(givenUserBaseballNum);
                     assertAll(
                             () -> assertThat(answerFlag).isTrue(),
-                            () -> assertThat(output()).contains("3스트라이크")
+                            () -> assertThat(output()).isEqualTo("3스트라이크")
                     );
                 },
                 1,3,5
@@ -75,7 +75,7 @@ public class ComputerTest {
                     boolean answerFlag = computer.compare(givenUserBaseballNum);
                     assertAll(
                             () -> assertThat(answerFlag).isFalse(),
-                            () -> assertThat(output()).contains("낫싱")
+                            () -> assertThat(output()).isEqualTo("낫싱")
                     );
                 },
                 4,5,6

@@ -1,5 +1,6 @@
 package baseball.domain;
 
+import baseball.status.ResultStatus;
 import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.HashMap;
@@ -44,9 +45,13 @@ public class Computer {
             bollCount += boll(result);
         }
         BaseballResult baseballResult = new BaseballResult(strikeCount, bollCount);
-        String resultText = baseballResult.printResult();
-        System.out.println(resultText);
+        printResult(baseballResult);
         return baseballResult.isAnswer();
+    }
+
+    private void printResult(BaseballResult baseballResult){
+        String resultText = baseballResult.getResultText();
+        System.out.println(resultText);
     }
 
     private ResultStatus match(int userNumber, int userPosition) {
