@@ -14,7 +14,7 @@ public class BaseballGame {
     }
 
     //TODO userInput 받기전 value 검증 필요
-    boolean continueGame(int userInput) {
+    boolean checkContinue(int userInput) {
         if (userInput == CONTINUE) {
             this.correctAnswer = false;
             return this.onGame;
@@ -27,7 +27,7 @@ public class BaseballGame {
         return this.correctAnswer = result;
     }
 
-    void exit() {
-        // TODO
+    public void quit() {
+        System.exit(0);
     }
 }

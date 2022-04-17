@@ -16,12 +16,22 @@ public class BaseballGameTest {
     }
 
     @Test
-    @DisplayName("게임 정답을 맞춘 후 사용자가 1을 입력을 하면 true를 반환한다.")
+    @DisplayName("게임 진행 여부 확인 시 사용자가 1을 입력을 하면 true를 반환한다.")
     void continue_game() {
         // given
         // when
-        boolean continueGame = baseballGame.continueGame(1);
+        boolean continueGame = baseballGame.checkContinue(1);
         // then
         assertThat(continueGame).isTrue();
+    }
+
+    @Test
+    @DisplayName("게임 진행 여부 확인 시 사용자가 2을 입력을 하면 false를 반환한다.")
+    void stop_game() {
+        // given
+        // when
+        boolean continueGame = baseballGame.checkContinue(2);
+        // then
+        assertThat(continueGame).isFalse();
     }
 }
