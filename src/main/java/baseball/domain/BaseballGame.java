@@ -16,6 +16,7 @@ public class BaseballGame {
 
     public boolean start() {
         this.computer = new Computer();
+        this.player = new Player();
 
         while (!correctAnswer) {
             System.out.print(BASEBALL_INPUT_REQUIRED_MESSAGE);
