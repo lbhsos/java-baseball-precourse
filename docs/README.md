@@ -8,14 +8,11 @@
 - [x] 사용자가 잘못된 값을 입력할 경우 IllegalArgumentException을 발생시킨 후 애플리케이션은 종료되어야 한다.
 
 ## 구현할 기능
-### Game 
-- [x] 게임 진행 여부 확인 시 사용자가 1을 입력을 하면 true를 반환한다
-- [x] 게임 진행 여부 확인 시 사용자가 2을 입력을 하면 false를 반환한다.
-
 ### Computer
 - [x] 1볼 1스트라이크의 경우를 정상적으로 비교하는지 확인한다.
 - [x] 사용자의 입력이 상대방 수와 모두 일치할 경우 3스트라이크를 정상적으로 비교하는지 확인한다.
 - [x] 사용자의 입력이 상대방 수와 아무것도 일치하지 않을 경우 낫싱을 리턴하는지 확인한다.
+- [x] 중복된 수가 랜덤 함수에서 제공될 경우 중복을 제거하여 상대방 수로 지닌다.
 
 ### Player
 - [x] 사용자의 입력이 숫자가 아닌 경우 IllegalArgumentException을 발생시킨다.
@@ -26,4 +23,11 @@
 - [x] 게임 종료 후 사용자의 입력 문자 길이가 한 글자가 아닌 경우 IllegalArgumentException을 발생시킨다.
 
 ### Result
-- [x] Result 객체가 생성되면, 현재 볼, 스트라이크 현황을 프린트해준다. 단, 볼과 스트라이크 갯수가 0이면 낫싱을 프린트해준다.
+- [x] Baseball 객체의 strikeCount가 3일 때, 정답인지 확인하면 true를 리턴한다.
+- [x] Baseball 객체의 strikeCount가 3이 아닐 때, 정답인지 확인하면 false를 리턴한다.
+- [x] Baseball 객체의 strikeCount와 bollCount가 둘 다 0일 때 결과는 '낫싱'스트링을 리턴한다.
+- [x] Baseball 객체의 strikeCount가 3이면 결과는 '3스트라이크' 스트링을 리턴한다.
+- [x] Baseball 객체의 ballCount가 3이면 결과는 '3볼' 스트링을 리턴한다.
+- [x] 결과 호출시 Baseball 객체의 strikeCount와 bollCount 갯수만큼 스트링을 리턴한다.
+- [x] 결과 호출시 Baseball 객체의 strikeCount가 0이면 스트라이크 문자열은 포함하지 않는다.
+- [x] 결과 호출시 Baseball 객체의 ballCount가 0이면 스트라이크 문자열은 포함하지 않는다.
