@@ -1,7 +1,5 @@
 package baseball.view;
 
-import baseball.model.BaseballResult;
-
 public class Message {
     public static final String BASEBALL_INPUT_REQUIRED_MESSAGE = "숫자를 입력해주세요: ";
     public static final String GAME_CONTINUE_INPUT_REQUIRED_MESSAGE = "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
@@ -16,17 +14,20 @@ public class Message {
     public static void printInputRequired() {
         System.out.print(BASEBALL_INPUT_REQUIRED_MESSAGE);
     }
+
     public static void askContinueGame() {
         System.out.print(GAME_CONTINUE_INPUT_REQUIRED_MESSAGE);
     }
+
     public static void printGameEnd() {
         System.out.println(GAME_END_MESSAGE);
     }
+
     public static void printAppEnd() {
         System.out.print(END_MESSAGE);
     }
-    public static void print(BaseballResult baseballResult) {
-        String resultText = baseballResult.getResultText();
-        System.out.println(resultText);
+
+    public static void print(String text) {
+        System.out.println(text);
     }
 }

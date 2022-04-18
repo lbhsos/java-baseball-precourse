@@ -1,14 +1,13 @@
 package baseball.model;
 
 import baseball.status.ResultStatus;
-import baseball.view.Message;
 import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Computer {
-    // Map<number, position>
+    // Map<숫자, 야구 공 자리>
     private Map<Integer, Integer> baseballNum;
 
     private static final int START_INCLUSIVE = 1;
@@ -19,7 +18,7 @@ public class Computer {
         this.generator();
     }
 
-    public boolean compare(Map<Integer, Integer> userBaseballInput) {
+    public BaseballResult compare(Map<Integer, Integer> userBaseballInput) {
         int strikeCount = 0;
         int ballCount = 0;
 
@@ -30,8 +29,7 @@ public class Computer {
             ballCount += boll(result);
         }
         BaseballResult baseballResult = new BaseballResult(strikeCount, ballCount);
-        Message.print(baseballResult);
-        return baseballResult.isAnswer();
+        return baseballResult;
     }
 
     private void generator() {

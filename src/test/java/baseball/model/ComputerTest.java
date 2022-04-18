@@ -6,26 +6,19 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
-import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.Map;
 
 import static camp.nextstep.edu.missionutils.test.Assertions.assertRandomNumberInRangeTest;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertAll;
 
 public class ComputerTest {
 
     private Computer computer = new Computer();
-    private OutputStream captor;
 
     @BeforeEach
     void init() {
         computer = new Computer();
-        captor = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(captor));
     }
 
     @ParameterizedTest
@@ -36,11 +29,8 @@ public class ComputerTest {
         assertRandomNumberInRangeTest(
                 () -> {
                     computer = new Computer();
-                    boolean answerFlag = computer.compare(givenUserBaseballNum);
-                    assertAll(
-                            () -> assertThat(answerFlag).isFalse(),
-                            () -> assertThat(output()).contains("1볼 1스트라이크")
-                    );
+                    BaseballResult baseballResult = computer.compare(givenUserBaseballNum);
+                    assertThat(baseballResult.getResultText()).isEqualTo("1볼 1스트라이크");
                 },
                 1,3,5
         );
@@ -54,11 +44,8 @@ public class ComputerTest {
         assertRandomNumberInRangeTest(
                 () -> {
                     computer = new Computer();
-                    boolean answerFlag = computer.compare(givenUserBaseballNum);
-                    assertAll(
-                            () -> assertThat(answerFlag).isTrue(),
-                            () -> assertThat(output()).isEqualTo("3스트라이크")
-                    );
+                    BaseballResult baseballResult = computer.compare(givenUserBaseballNum);
+                    assertThat(baseballResult.getResultText()).isEqualTo("3스트라이크");
                 },
                 1,3,5
         );
@@ -72,11 +59,8 @@ public class ComputerTest {
         assertRandomNumberInRangeTest(
                 () -> {
                     computer = new Computer();
-                    boolean answerFlag = computer.compare(givenUserBaseballNum);
-                    assertAll(
-                            () -> assertThat(answerFlag).isFalse(),
-                            () -> assertThat(output()).isEqualTo("낫싱")
-                    );
+                    BaseballResult baseballResult = computer.compare(givenUserBaseballNum);
+                    assertThat(baseballResult.getResultText()).isEqualTo("낫싱");
                 },
                 4,5,6
         );
@@ -90,11 +74,8 @@ public class ComputerTest {
         assertRandomNumberInRangeTest(
                 () -> {
                     computer = new Computer();
-                    boolean answerFlag = computer.compare(givenUserBaseballNum);
-                    assertAll(
-                            () -> assertThat(answerFlag).isTrue(),
-                            () -> assertThat(output()).contains("3스트라이크")
-                    );
+                    BaseballResult baseballResult = computer.compare(givenUserBaseballNum);
+                    assertThat(baseballResult.getResultText()).contains("3스트라이크");
                 },
                 1,1,1,2,2,2,3
         );
@@ -108,9 +89,5 @@ public class ComputerTest {
             baseballNum.put(numericValue, i);
         }
         return baseballNum;
-    }
-
-    protected final String output() {
-        return captor.toString().trim();
     }
 }

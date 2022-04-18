@@ -1,5 +1,6 @@
 package baseball.controller;
 
+import baseball.model.BaseballResult;
 import baseball.model.Computer;
 import baseball.model.Player;
 
@@ -23,7 +24,8 @@ public class BaseballGame {
         while (!correctAnswer) {
             printInputRequired();
             Map<Integer, Integer> baseballInput = player.getBaseballInput();
-            correctAnswer = isCorrectAnswer(baseballInput);
+            BaseballResult baseballResult = getBaseballResult(baseballInput);
+            correctAnswer = isCorrectAnswer(baseballResult);
         }
 
         askContinueGame();
@@ -36,18 +38,24 @@ public class BaseballGame {
         printAppEnd();
     }
 
+    private BaseballResult getBaseballResult(Map<Integer, Integer> userBaseballInput) {
+        BaseballResult baseballResult = computer.compare(userBaseballInput);
+        print(baseballResult.getResultText());
+        return baseballResult;
+    }
+
+    private boolean isCorrectAnswer(BaseballResult baseballResult) {
+        boolean answer = baseballResult.isAnswer();
+        if (answer) {
+            printGameEnd();
+        }
+        return this.correctAnswer = answer;
+    }
+
     private boolean checkContinue(int userInput) {
         if (userInput == CONTINUE) {
             return true;
         }
         return false;
-    }
-
-    private boolean isCorrectAnswer(Map<Integer, Integer> userBaseballInput) {
-        boolean answer = computer.compare(userBaseballInput);
-        if (answer) {
-            printGameEnd();
-        }
-        return this.correctAnswer = answer;
     }
 }
