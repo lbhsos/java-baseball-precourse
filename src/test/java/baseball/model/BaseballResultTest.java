@@ -26,7 +26,7 @@ public class BaseballResultTest {
 
     @ParameterizedTest
     @ValueSource(ints = {0,1,2})
-    @DisplayName("Baseball 객체의 strikeCount가 3이 아닐 때, 정답인지 확인하면 true를 리턴한다.")
+    @DisplayName("Baseball 객체의 strikeCount가 3이 아닐 때, 정답인지 확인하면 false를 리턴한다.")
     void not_answer(int givenStrikeCount) {
         // given
         int baseBallCount = 3;
@@ -65,8 +65,8 @@ public class BaseballResultTest {
     }
 
     @Test
-    @DisplayName("Baseball 객체의 givenBollCount가 3이면 결과는 '3볼' 스트링을 리턴한다.")
-    void get_result_when_all_boll() {
+    @DisplayName("Baseball 객체의 ballCount가 3이면 결과는 '3볼' 스트링을 리턴한다.")
+    void get_result_when_ball_is_3() {
         // given
         int givenStrikeCount = 0;
         int givenBallCount = 3;
