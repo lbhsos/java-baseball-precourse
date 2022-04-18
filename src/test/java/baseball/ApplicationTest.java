@@ -32,8 +32,8 @@ class ApplicationTest extends NsTest {
     void 게임정상종료_테스트() {
         assertRandomNumberInRangeTest(
                 () -> {
-                    run("246", "135", "876", "678", "2");
-                    assertThat(output()).contains("1볼", "낫싱", "3볼", "3스트라이크", "게임 종료");
+                    run("246", "135", "876", "867", "678", "2");
+                    assertThat(output()).contains("1볼", "낫싱", "2볼 1스트라이크", "3볼", "3스트라이크", "게임 종료");
                 },
                 6,7,8
         );
