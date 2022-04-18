@@ -20,7 +20,7 @@ public class Message {
         System.out.print(GAME_CONTINUE_INPUT_REQUIRED_MESSAGE);
     }
     public static void printGameEnd() {
-        System.out.print(GAME_END_MESSAGE);
+        System.out.println(GAME_END_MESSAGE);
     }
     public static void printAppEnd() {
         System.out.print(END_MESSAGE);

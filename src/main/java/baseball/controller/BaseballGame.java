@@ -12,13 +12,13 @@ public class BaseballGame {
     private Computer computer;
     private Player player;
     private boolean correctAnswer = false;
-    private boolean onGame = true;
 
     private static final int CONTINUE = 1;
 
     public boolean start() {
         this.computer = new Computer();
         this.player = new Player();
+        this.correctAnswer = false;
 
         while (!correctAnswer) {
             printInputRequired();
@@ -33,21 +33,20 @@ public class BaseballGame {
     }
 
     public void quit() {
-        printGameEnd();
+        printAppEnd();
     }
 
     private boolean checkContinue(int userInput) {
         if (userInput == CONTINUE) {
-            this.correctAnswer = false;
-            return this.onGame;
+            return true;
         }
-        return this.onGame = false;
+        return false;
     }
 
     private boolean isCorrectAnswer(Map<Integer, Integer> userBaseballInput) {
         boolean answer = computer.compare(userBaseballInput);
         if (answer) {
-            printAppEnd();
+            printGameEnd();
         }
         return this.correctAnswer = answer;
     }
