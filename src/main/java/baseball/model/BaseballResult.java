@@ -28,13 +28,13 @@ public class BaseballResult {
             sb.append(nothing.getText());
             return sb.toString();
         }
-        appendBollResult(sb);
+        appendBallResult(sb);
         appendStrikeResult(sb);
         return sb.toString();
     }
 
-    private void appendBollResult(StringBuilder sb) {
-        if (strikeCount == 3) {
+    private void appendBallResult(StringBuilder sb) {
+        if (ballCount == 0) {
             return;
         }
         ResultStatus ball = ResultStatus.BALL;
@@ -43,7 +43,7 @@ public class BaseballResult {
     }
 
     private void appendStrikeResult(StringBuilder sb) {
-        if (ballCount == 3) {
+        if (strikeCount == 0) {
             return;
         }
         ResultStatus strike = ResultStatus.STRIKE;
