@@ -22,20 +22,27 @@ public class BaseballGame {
         this.correctAnswer = false;
 
         while (!correctAnswer) {
-            printInputRequired();
-            Map<Integer, Integer> baseballInput = player.getBaseballInput();
-            BaseballResult baseballResult = getBaseballResult(baseballInput);
-            correctAnswer = isCorrectAnswer(baseballResult);
+            play();
         }
+        return askContinueGame();
+    }
 
-        askContinueGame();
+    public void quit() {
+        printAppEnd();
+    }
+
+    private boolean askContinueGame() {
+        printAskingContinueGame();
         int gameContinueInput = player.getGameContinueInput();
         boolean continueFlag = checkContinue(gameContinueInput);
         return continueFlag;
     }
 
-    public void quit() {
-        printAppEnd();
+    private void play() {
+        printInputRequired();
+        Map<Integer, Integer> baseballInput = player.getBaseballInput();
+        BaseballResult baseballResult = getBaseballResult(baseballInput);
+        correctAnswer = isCorrectAnswer(baseballResult);
     }
 
     private BaseballResult getBaseballResult(Map<Integer, Integer> userBaseballInput) {
